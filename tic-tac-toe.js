@@ -23,24 +23,27 @@ window.addEventListener('load', (e) => {
         sqr.onclick = (e) => {
             if (sqr.innerHTML == "<p></p>") {
                 Gamestate = Math.floor(Math.random() * 2);
+
+
+                if (Gamestate == Unselected || Gamestate == Oselected) {
+                    sqr.classList.remove("O");
+                    sqr.classList.add("X");
+                    sqr.innerHTML = 'X';
+                    Gamestate = Xselected;
+                    console.log(`Gamestate: Xselected ${Gamestate}`);
+
+                }
+                else {
+                    sqr.classList.remove("X");
+                    sqr.classList.add("O");
+                    sqr.innerHTML = 'O';
+                    Gamestate = Oselected;
+                    console.log(`Gamestate: Oselected ${Gamestate}`);
+                }
             }
 
 
-            if (Gamestate == Unselected || Gamestate == Oselected) {
-                sqr.classList.remove("O");
-                sqr.classList.add("X");
-                sqr.innerHTML = 'X';
-                Gamestate = Xselected;
-                console.log(`Gamestate: Xselected ${Gamestate}`);
 
-            }
-            else {
-                sqr.classList.remove("X");
-                sqr.classList.add("O");
-                sqr.innerHTML = 'O';
-                Gamestate = Oselected;
-                console.log(`Gamestate: Oselected ${Gamestate}`);
-            }
 
 
 

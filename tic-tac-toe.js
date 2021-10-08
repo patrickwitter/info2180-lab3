@@ -1,7 +1,9 @@
 
 window.addEventListener('load', (e) => {
-    console.log("page loaded");
+
     let squares = document.querySelectorAll("#board > div");
+    let btn = document.querySelector(".btn");
+
 
     squares.forEach((sqr) => {
         sqr.classList.add("sqaure");
